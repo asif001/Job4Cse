@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -27,6 +28,9 @@ public class JobBanner extends AppCompatActivity
     private ArrayList<JobDetails> jobList;
     private JobAdapter jobAdapter;
     private RecyclerView rvJobs;
+    private ProgressBar progressBar;
+    private Integer currentPage = 1;
+    private String currentUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,7 @@ public class JobBanner extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        init();
         initRecyclerView();
     }
 
@@ -98,7 +103,7 @@ public class JobBanner extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-            showJobs("http://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=");
+            showJobs("http://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=",currentPage);
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -115,17 +120,25 @@ public class JobBanner extends AppCompatActivity
         return true;
     }
 
-    private void showJobs(final String url){
+    private void showJobs(final String url, final Integer currentPage){
+
+        this.currentUrl = url;
 
         new Thread(new Runnable() {
             @Override
             public void run() {
 
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressBar.setVisibility(View.VISIBLE);
+                    }
+                });
+
                 HtmlParse htmlParse = new HtmlParse();
 
                 try {
-                    jobList.clear();
-                    htmlParse.Start(url,"3",jobList);
+                    htmlParse.Start(url,currentPage.toString(),jobList);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -133,6 +146,8 @@ public class JobBanner extends AppCompatActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+
+                        progressBar.setVisibility(View.GONE);
                         jobAdapter.notifyDataSetChanged();
                     }
                 });
@@ -154,5 +169,21 @@ public class JobBanner extends AppCompatActivity
         rvJobs.setLayoutManager(mLayoutManager);
         rvJobs.setItemAnimator(new DefaultItemAnimator());
         rvJobs.setAdapter(jobAdapter);
+
+        jobAdapter.setOnBottomReachedListener(new OnBottomReachedListener() {
+            @Override
+            public void onBottomReached(int position) {
+                currentPage = currentPage + 1;
+                showJobs(currentUrl,currentPage);
+            }
+        });
+
+    }
+
+    private void init(){
+
+        progressBar = findViewById(R.id.determinate);
+        progressBar.setVisibility(View.GONE);
+
     }
 }

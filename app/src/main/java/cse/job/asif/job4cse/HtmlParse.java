@@ -31,6 +31,17 @@ public class HtmlParse {
 
     }
 
+    private String getJobUrl(Element JobElement){
+
+        Elements query = JobElement.getElementsByClass("job-title-text");
+
+        if(!query.isEmpty())
+            return query.first().getElementsByTag("a").first().attr("href");
+        else
+            return "";
+
+    }
+
     private String getLogo(Element JobElement){
 
         Elements query = JobElement.getElementsByClass("comp_logo");
@@ -133,6 +144,7 @@ public class HtmlParse {
 
                 JobDetails jobDetails = new JobDetails();
 
+                jobDetails.setJobUrl(getJobUrl(JobElement));
                 jobDetails.setLogo(getLogo(JobElement));
                 jobDetails.setTitle(getTitle(JobElement));
                 jobDetails.setCompname(getCompName(JobElement));

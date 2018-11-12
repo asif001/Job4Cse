@@ -12,6 +12,16 @@ public class JobDetails {
     private String Exp = "";
     private String deadline = "";
 
+    public String getJobUrl() {
+        return jobUrl;
+    }
+
+    public void setJobUrl(String jobUrl) {
+        this.jobUrl = jobUrl;
+    }
+
+    private String jobUrl = "";
+
     public String getLogo() {
         return logo;
     }
