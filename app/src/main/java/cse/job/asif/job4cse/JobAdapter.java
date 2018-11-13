@@ -2,7 +2,6 @@ package cse.job.asif.job4cse;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,8 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
     private ArrayList<JobDetails> JobList;
 
     private OnBottomReachedListener onBottomReachedListener;
+
+    private onJobViewListener onJobViewListener;
 
     public JobAdapter(ArrayList<JobDetails> JobList){
         this.JobList = JobList;
@@ -38,20 +39,13 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
             onBottomReachedListener.onBottomReached(position);
         }
 
-        JobDetails jobDetails = JobList.get(position);
+        final JobDetails jobDetails = JobList.get(position);
 
         myViewHolder.compTitle.setText(jobDetails.getTitle());
         myViewHolder.compName.setText(jobDetails.getCompname());
         myViewHolder.compLocation.setText("Location : " + jobDetails.getLocation());
         myViewHolder.compExp.setText("Exp : " + jobDetails.getExp());
         myViewHolder.compDead.setText("DeadLine : " + jobDetails.getDeadline());
-
-        myViewHolder.buttonView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("Clicked");
-            }
-        });
 
         String temp = "";
         Integer count = 1;
@@ -64,6 +58,13 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
         }
 
         myViewHolder.qualifications.setText(temp);
+
+        myViewHolder.buttonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onJobViewListener.ViewJob(jobDetails.getJobUrl());
+            }
+        });
 
     }
 
@@ -78,6 +79,11 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
 
     }
 
+    public void setOnJobViewListener(onJobViewListener onJobViewListener){
+
+        this.onJobViewListener = onJobViewListener;
+
+    }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
 

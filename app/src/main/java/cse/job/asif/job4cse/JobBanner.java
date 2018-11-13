@@ -1,5 +1,6 @@
 package cse.job.asif.job4cse;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -31,6 +32,8 @@ public class JobBanner extends AppCompatActivity
     private ProgressBar progressBar;
     private Integer currentPage = 1;
     private String currentUrl;
+    private String origin;
+    private Intent currentIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +106,7 @@ public class JobBanner extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-            showJobs("http://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=",currentPage);
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=",currentPage);
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -120,9 +123,10 @@ public class JobBanner extends AppCompatActivity
         return true;
     }
 
-    private void showJobs(final String url, final Integer currentPage){
+    private void showJobs(final String origin, final String url, final Integer currentPage){
 
         this.currentUrl = url;
+        this.origin = origin;
 
         new Thread(new Runnable() {
             @Override
@@ -138,7 +142,7 @@ public class JobBanner extends AppCompatActivity
                 HtmlParse htmlParse = new HtmlParse();
 
                 try {
-                    htmlParse.Start(url,currentPage.toString(),jobList);
+                    htmlParse.Start(origin, url,currentPage.toString(),jobList);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -174,7 +178,17 @@ public class JobBanner extends AppCompatActivity
             @Override
             public void onBottomReached(int position) {
                 currentPage = currentPage + 1;
-                showJobs(currentUrl,currentPage);
+                showJobs(origin, currentUrl,currentPage);
+            }
+        });
+
+        jobAdapter.setOnJobViewListener(new onJobViewListener() {
+            @Override
+            public void ViewJob(String url) {
+
+                currentIntent = new Intent(getApplicationContext(),ViewJobDetails.class);
+                currentIntent.putExtra("Url",url);
+                startActivity(currentIntent);
             }
         });
 

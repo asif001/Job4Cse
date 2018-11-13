@@ -12,6 +12,7 @@ public class HtmlParse {
 
     private  ArrayList<JobDetails> JobList;
     private String baseUrl = "";
+    private String origin = "";
 
     private Document DownloadPage(String pageNo) throws IOException{
 
@@ -36,7 +37,7 @@ public class HtmlParse {
         Elements query = JobElement.getElementsByClass("job-title-text");
 
         if(!query.isEmpty())
-            return query.first().getElementsByTag("a").first().attr("href");
+            return this.origin + query.first().getElementsByTag("a").first().attr("href");
         else
             return "";
 
@@ -161,10 +162,11 @@ public class HtmlParse {
 
     }
 
-    public  ArrayList<JobDetails> Start(String url,String page,ArrayList<JobDetails> JobList) throws IOException {
+    public  ArrayList<JobDetails> Start(String origin, String url,String page,ArrayList<JobDetails> JobList) throws IOException {
 
 
         this.baseUrl = url;
+        this.origin = origin;
         this.JobList = JobList;
 
         Document document = DownloadPage(page);
