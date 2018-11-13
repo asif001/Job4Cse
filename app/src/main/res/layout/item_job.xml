@@ -6,10 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:padding="28dp"
-    android:background="#00cc66"
-    android:focusable="true">
-
+    android:background="#AA8"
+    android:padding="28dp">
 
     <TextView
         android:id="@+id/compTitle"
@@ -74,6 +72,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/compName" />
+
+    <Button
+        android:id="@+id/buttonView"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compDead" />
 
 
 </android.support.constraint.ConstraintLayout>
