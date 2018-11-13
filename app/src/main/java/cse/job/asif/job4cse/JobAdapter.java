@@ -48,10 +48,12 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
         myViewHolder.compDead.setText("DeadLine : " + jobDetails.getDeadline());
 
         String temp = "";
+        Integer count = 1;
 
         for(String string : jobDetails.getQualifications()){
 
-            temp = temp + string + "\n";
+            temp = temp + "\n" + count.toString() + ". " + string;
+            count = count + 1;
 
         }
 

@@ -4,16 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="315dp"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="#00cc66">
+    android:padding="28dp"
+    android:background="#00cc66"
+    android:focusable="true">
 
 
     <TextView
         android:id="@+id/compTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="TextView"
         android:textSize="25sp"
@@ -23,12 +24,13 @@
 
     <TextView
         android:id="@+id/compName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="18dp"
         android:text="TextView"
+        android:gravity="center"
         android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/compTitle" />
 
@@ -36,7 +38,6 @@
         android:id="@+id/compLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="18dp"
         android:text="TextView"
         android:textSize="17sp"
@@ -47,7 +48,6 @@
         android:id="@+id/compExp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="18dp"
         android:text="TextView"
         android:textSize="17sp"
@@ -58,22 +58,20 @@
         android:id="@+id/compDead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="28dp"
         android:text="TextView"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/compTitle" />
+        app:layout_constraintTop_toTopOf="@+id/compExp" />
 
     <TextView
         android:id="@+id/compQualifications"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
-        android:lines="4"
         android:textSize="17sp"
+        android:gravity="left"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/compName" />
 
