@@ -21,7 +21,8 @@
         <activity
             android:name=".JobBanner"
             android:label="@string/title_activity_job_banner"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ViewJobDetails"></activity>
     </application>
 
 </manifest>
