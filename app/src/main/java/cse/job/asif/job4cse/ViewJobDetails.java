@@ -1,26 +1,43 @@
 package cse.job.asif.job4cse;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class ViewJobDetails extends AppCompatActivity {
 
-    private TextView viewUrl;
+    private WebView viewUrl;
+    private Intent intent;
+    private String HostUrl;
+    private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_job_details);
 
-        Intent intent = getIntent();
+        intent = getIntent();
 
-        String url = intent.getStringExtra("Url");
+        url = intent.getStringExtra("Url");
+        HostUrl = intent.getStringExtra("Origin");
 
-        viewUrl = findViewById(R.id.viewUrl);
+        viewUrl = findViewById(R.id.webView);
+        viewUrl.loadUrl(url);
+        viewUrl.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
 
-        viewUrl.setText(url);
+                view.loadUrl(request.getUrl().toString());
+                return false;
+            }
+        });
+
+        viewUrl.getSettings().setJavaScriptEnabled(true);
 
     }
+
 }

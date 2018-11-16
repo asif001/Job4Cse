@@ -188,6 +188,7 @@ public class JobBanner extends AppCompatActivity
 
                 currentIntent = new Intent(getApplicationContext(),ViewJobDetails.class);
                 currentIntent.putExtra("Url",url);
+                currentIntent.putExtra("Origin",origin);
                 startActivity(currentIntent);
             }
         });
