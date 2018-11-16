@@ -37,7 +37,8 @@ public class JobDetails {
                 + COLUMN_URL + " TEXT,"
                 + COLUMN_EXP + " TEXT,"
                 + COLUMN_DEAD + " TEXT,"
-                + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
+                + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP,"
+                + "UNIQUE(" + COLUMN_URL + ")"
                 + ")";
 
 
