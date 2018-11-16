@@ -26,7 +26,7 @@ public class HtmlParse {
 
         String tmpUrl = baseUrl + "&var=" + random;
 
-        Document document = Jsoup.connect(tmpUrl).data("pg",pageNo).get();
+        Document document = Jsoup.connect(tmpUrl).userAgent("Mozilla").data("pg",pageNo).timeout(200000).get();
 
         return document;
 

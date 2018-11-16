@@ -18,6 +18,8 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
 
     private onJobViewListener onJobViewListener;
 
+    private OnJobSaveListener onJobSaveListener;
+
     public JobAdapter(ArrayList<JobDetails> JobList){
         this.JobList = JobList;
     }
@@ -52,8 +54,10 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
 
         for(String string : jobDetails.getQualifications()){
 
-            temp = temp + "\n" + count.toString() + ". " + string;
-            count = count + 1;
+            if(!string.equals("")) {
+                temp = temp + "\n" + count.toString() + ". " + string;
+                count = count + 1;
+            }
 
         }
 
@@ -63,6 +67,13 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
             @Override
             public void onClick(View v) {
                 onJobViewListener.ViewJob(jobDetails.getJobUrl());
+            }
+        });
+
+        myViewHolder.buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onJobSaveListener.onSave(jobDetails);
             }
         });
 
@@ -85,6 +96,11 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
 
     }
 
+    public void setOnJobSaveListener(OnJobSaveListener onJobSaveListener){
+
+        this.onJobSaveListener = onJobSaveListener;
+    }
+
     public class myViewHolder extends RecyclerView.ViewHolder{
 
         public TextView compName;
@@ -94,6 +110,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
         public TextView compDead;
         public TextView qualifications;
         public Button buttonView;
+        public Button buttonSave;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -105,6 +122,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
             compDead = (TextView) itemView.findViewById(R.id.compDead);
             qualifications = (TextView) itemView.findViewById(R.id.compQualifications);
             buttonView = (Button) itemView.findViewById(R.id.buttonView);
+            buttonSave = (Button) itemView.findViewById(R.id.buttonSave);
 
         }
     }

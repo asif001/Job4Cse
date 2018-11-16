@@ -34,6 +34,8 @@ public class JobBanner extends AppCompatActivity
     private String currentUrl;
     private String origin;
     private Intent currentIntent;
+    private DatabaseHelper db;
+    private int showDatabase = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,9 +108,26 @@ public class JobBanner extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
+            showDatabase = 0;
+            jobList.clear();
             showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=",currentPage);
 
         } else if (id == R.id.nav_slideshow) {
+
+            showDatabase = 1;
+            jobList.clear();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    db.getAllJobs(jobList);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            jobAdapter.notifyDataSetChanged();
+                        }
+                    });
+                }
+            }).start();
 
         } else if (id == R.id.nav_manage) {
 
@@ -177,8 +196,10 @@ public class JobBanner extends AppCompatActivity
         jobAdapter.setOnBottomReachedListener(new OnBottomReachedListener() {
             @Override
             public void onBottomReached(int position) {
-                currentPage = currentPage + 1;
-                showJobs(origin, currentUrl,currentPage);
+                if(showDatabase == 0) {
+                    currentPage = currentPage + 1;
+                    showJobs(origin, currentUrl, currentPage);
+                }
             }
         });
 
@@ -193,12 +214,20 @@ public class JobBanner extends AppCompatActivity
             }
         });
 
+        jobAdapter.setOnJobSaveListener(new OnJobSaveListener() {
+            @Override
+            public void onSave(JobDetails jobDetails) {
+                db.insertJob(jobDetails);
+            }
+        });
+
     }
 
     private void init(){
 
         progressBar = findViewById(R.id.determinate);
         progressBar.setVisibility(View.GONE);
+        db = new DatabaseHelper(this);
 
     }
 }

@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/compName" />
 
     <Button
-        android:id="@+id/buttonView2"
+        android:id="@+id/buttonSave"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
