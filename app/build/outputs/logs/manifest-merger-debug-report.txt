@@ -1,0 +1,315 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4aeca18239ec0f6c0025f71473207a4a\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\5198419042ed4ec33cfb4acc5af158cf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\aa92570b367e7d49426262dd9c28dc57\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\2303adbb22c88ef4dae173847008df56\AndroidManifest.xml:17:1-22:12
+MERGED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:2:1-65:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\053519c7932a2578147602651efa2b59\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\aa09d95cd8381475f16aad153add3970\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\7f325ef35ed4912074ad09d0cda0bdec\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\70262256eb8390f77713f68aa7e3fb28\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\aeceb1cd6603d25c350c4475e91441e8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\adac0c92a0981aa21b855af6f2f21a7a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\e0bff7411d694044ca8c2e72a9b1e9a5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a9dc34cfeb2d8f75018562deb8ef1ddb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\31c6ce9add0e178827e2857721068af3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\27f6bc104c0bcf6b49d04817473ed1f1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\1af9963a74a55690a5ddc50a01af4821\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\78f4e618ea4260478d9ff03abdfe30f8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\12ddb40d0362c8cbb53e196d2b1cb1ea\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\e6814ed7fa51a04c587711b10d00b1ee\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\56af25bfdc5c2e1c3c104429906f876e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7ebd6ed340c04e77b95b15909eb9dcdd\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5bce2b4f7c7bb12bf82855d2585a6775\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\feb063b8c8a3f9ff22ea880239c836bd\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\124e300109c7450f5540c6ad87d5e020\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\fa02d2bc933a56775c8a6576b9f5168b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\755f71c1c1618c22fbfba6a7b4b58a68\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\a440808913e4f889df4cca30c176c187\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\a58e4b93417af7102c97d9d50ef9e51f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\869362642d33165415f53ea2d645e3d0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\43281f3c050bf4ba4a914e0aa63e250f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c5c0dda8e3b825e16c2717a2c805413c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\7a6832e06b2699cdd588abde00884175\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\0e9449a2a792830727788874a6ccf113\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\690ee160e845cc571f2ba8aad37dccda\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+	package
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:3:5-35
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:1-41:12
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:6:5-81
+MERGED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:14:5-81
+MERGED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:6:22-78
+application
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:8:5-39:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4aeca18239ec0f6c0025f71473207a4a\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4aeca18239ec0f6c0025f71473207a4a\AndroidManifest.xml:22:5-20
+MERGED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:16:5-63:19
+MERGED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:16:5-63:19
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7ebd6ed340c04e77b95b15909eb9dcdd\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7ebd6ed340c04e77b95b15909eb9dcdd\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5bce2b4f7c7bb12bf82855d2585a6775\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5bce2b4f7c7bb12bf82855d2585a6775\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\feb063b8c8a3f9ff22ea880239c836bd\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\feb063b8c8a3f9ff22ea880239c836bd\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7ebd6ed340c04e77b95b15909eb9dcdd\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:11:9-41
+	tools:ignore
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:16:18-44
+	android:roundIcon
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:12:9-54
+	android:icon
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:14:9-40
+activity#cse.job.asif.job4cse.Activities.LoginActivity
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:15:9-21:20
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:15:19-59
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:19:27-74
+activity#cse.job.asif.job4cse.Activities.JobBanner
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:22:9-25:59
+	android:label
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:24:13-62
+	android:theme
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:23:13-49
+activity#cse.job.asif.job4cse.Activities.ViewJobDetails
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:26:9-63
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:26:19-60
+receiver#cse.job.asif.job4cse.broadcasts.MyBroadcastReceiver
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:28:9-36:20
+	android:enabled
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:30:13-35
+	android:exported
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:29:13-59
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.INPUT_METHOD_CHANGED
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:32:13-35:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:33:17-79
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:33:25-76
+action#android.intent.action.INPUT_METHOD_CHANGED
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:34:17-85
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:34:25-82
+activity#cse.job.asif.job4cse.Activities.ViewSavedJobs
+ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:38:9-71
+	android:name
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml:38:19-59
+uses-sdk
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4aeca18239ec0f6c0025f71473207a4a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4aeca18239ec0f6c0025f71473207a4a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\5198419042ed4ec33cfb4acc5af158cf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\5198419042ed4ec33cfb4acc5af158cf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\aa92570b367e7d49426262dd9c28dc57\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\aa92570b367e7d49426262dd9c28dc57\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\2303adbb22c88ef4dae173847008df56\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\2303adbb22c88ef4dae173847008df56\AndroidManifest.xml:20:5-44
+MERGED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:8:5-10:41
+MERGED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\053519c7932a2578147602651efa2b59\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\053519c7932a2578147602651efa2b59\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\aa09d95cd8381475f16aad153add3970\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\aa09d95cd8381475f16aad153add3970\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\7f325ef35ed4912074ad09d0cda0bdec\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\7f325ef35ed4912074ad09d0cda0bdec\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\70262256eb8390f77713f68aa7e3fb28\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\70262256eb8390f77713f68aa7e3fb28\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\aeceb1cd6603d25c350c4475e91441e8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\aeceb1cd6603d25c350c4475e91441e8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\adac0c92a0981aa21b855af6f2f21a7a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\adac0c92a0981aa21b855af6f2f21a7a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\e0bff7411d694044ca8c2e72a9b1e9a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\e0bff7411d694044ca8c2e72a9b1e9a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a9dc34cfeb2d8f75018562deb8ef1ddb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a9dc34cfeb2d8f75018562deb8ef1ddb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\31c6ce9add0e178827e2857721068af3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\31c6ce9add0e178827e2857721068af3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\27f6bc104c0bcf6b49d04817473ed1f1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\27f6bc104c0bcf6b49d04817473ed1f1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\1af9963a74a55690a5ddc50a01af4821\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\1af9963a74a55690a5ddc50a01af4821\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\78f4e618ea4260478d9ff03abdfe30f8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\78f4e618ea4260478d9ff03abdfe30f8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\12ddb40d0362c8cbb53e196d2b1cb1ea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\12ddb40d0362c8cbb53e196d2b1cb1ea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\e6814ed7fa51a04c587711b10d00b1ee\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\e6814ed7fa51a04c587711b10d00b1ee\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\56af25bfdc5c2e1c3c104429906f876e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\56af25bfdc5c2e1c3c104429906f876e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7ebd6ed340c04e77b95b15909eb9dcdd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7ebd6ed340c04e77b95b15909eb9dcdd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5bce2b4f7c7bb12bf82855d2585a6775\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\5bce2b4f7c7bb12bf82855d2585a6775\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\feb063b8c8a3f9ff22ea880239c836bd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\feb063b8c8a3f9ff22ea880239c836bd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\124e300109c7450f5540c6ad87d5e020\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\124e300109c7450f5540c6ad87d5e020\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\fa02d2bc933a56775c8a6576b9f5168b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\fa02d2bc933a56775c8a6576b9f5168b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\755f71c1c1618c22fbfba6a7b4b58a68\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\755f71c1c1618c22fbfba6a7b4b58a68\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\a440808913e4f889df4cca30c176c187\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\a440808913e4f889df4cca30c176c187\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\a58e4b93417af7102c97d9d50ef9e51f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\a58e4b93417af7102c97d9d50ef9e51f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\869362642d33165415f53ea2d645e3d0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\869362642d33165415f53ea2d645e3d0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\43281f3c050bf4ba4a914e0aa63e250f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\43281f3c050bf4ba4a914e0aa63e250f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c5c0dda8e3b825e16c2717a2c805413c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c5c0dda8e3b825e16c2717a2c805413c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\7a6832e06b2699cdd588abde00884175\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\7a6832e06b2699cdd588abde00884175\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\0e9449a2a792830727788874a6ccf113\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\0e9449a2a792830727788874a6ccf113\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\690ee160e845cc571f2ba8aad37dccda\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\690ee160e845cc571f2ba8aad37dccda\AndroidManifest.xml:20:5-44
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+		ADDED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+		INJECTED from E:\androidProjects\Job4Cse\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:12:5-68
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:12:22-65
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:13:22-76
+service#com.evernote.android.job.v21.PlatformJobService
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:17:9-20:72
+	android:exported
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:19:13-37
+	android:permission
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:20:13-69
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:18:13-75
+service#com.evernote.android.job.v14.PlatformAlarmService
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:21:9-24:72
+	android:exported
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:23:13-37
+	android:permission
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:24:13-69
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:22:13-77
+service#com.evernote.android.job.v14.PlatformAlarmServiceExact
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:26:13-82
+receiver#com.evernote.android.job.v14.PlatformAlarmReceiver
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:29:9-38:20
+	android:exported
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:30:13-78
+intent-filter#action:name:com.evernote.android.job.v14.RUN_JOB+action:name:net.vrallev.android.job.v14.RUN_JOB
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:32:13-37:29
+action#com.evernote.android.job.v14.RUN_JOB
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:35:17-79
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:35:25-76
+action#net.vrallev.android.job.v14.RUN_JOB
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:36:17-78
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:36:25-75
+receiver#com.evernote.android.job.JobBootReceiver
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:39:9-48:20
+	android:exported
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:40:13-68
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:42:13-47:29
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:44:17-82
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:44:25-79
+action#com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:45:17-82
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:45:25-79
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:46:17-84
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:46:25-81
+service#com.evernote.android.job.gcm.PlatformGcmService
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:50:9-58:19
+	android:enabled
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:52:13-36
+	android:exported
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:53:13-36
+	android:permission
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:54:13-93
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:51:13-75
+intent-filter#action:name:com.google.android.gms.gcm.ACTION_TASK_READY
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:55:13-57:29
+action#com.google.android.gms.gcm.ACTION_TASK_READY
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:56:17-87
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:56:25-84
+service#com.evernote.android.job.JobRescheduleService
+ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:59:9-62:72
+	android:exported
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:61:13-37
+	android:permission
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:62:13-69
+	android:name
+		ADDED from [com.evernote:android-job:1.2.6] C:\Users\Asif\.gradle\caches\transforms-1\files-1.1\android-job-1.2.6.aar\3331788d215942bcc771f9a260670fad\AndroidManifest.xml:60:13-73
