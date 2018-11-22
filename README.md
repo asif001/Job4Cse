@@ -1,2 +1,2 @@
 # Job4Cse
-App to search job
+App to search job for CSE graduate
