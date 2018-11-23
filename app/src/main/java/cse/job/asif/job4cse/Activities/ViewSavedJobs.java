@@ -14,6 +14,7 @@ import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +34,7 @@ public class ViewSavedJobs extends AppCompatActivity {
     private JobSavedAdapter jobSavedAdapter;
     private RecyclerView rvJobs;
     private Intent currentIntent;
+    private String currentUser;
     //private DatabaseHelper db;
 
     @Override
@@ -48,6 +50,7 @@ public class ViewSavedJobs extends AppCompatActivity {
 
         //db = new DatabaseHelper(this);
         jobList = new ArrayList<>();
+        currentUser = ParseUser.getCurrentUser().getUsername();
 
     }
 
@@ -98,6 +101,7 @@ public class ViewSavedJobs extends AppCompatActivity {
     private void readData(){
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Jobs");
+        query.whereEqualTo("username",currentUser);
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override

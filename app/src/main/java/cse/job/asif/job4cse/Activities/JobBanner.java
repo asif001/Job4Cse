@@ -25,6 +25,7 @@ import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.IOException;
@@ -51,6 +52,7 @@ public class JobBanner extends AppCompatActivity
     private String currentUrl;
     private String origin;
     private Intent currentIntent;
+    private String currentUser;
     //private DatabaseHelper db;
 
     @Override
@@ -228,6 +230,7 @@ public class JobBanner extends AppCompatActivity
 
         progressBar = findViewById(R.id.determinate);
         progressBar.setVisibility(View.GONE);
+        currentUser = ParseUser.getCurrentUser().getUsername();
         //db = new DatabaseHelper(this);
 
     }
@@ -254,6 +257,7 @@ public class JobBanner extends AppCompatActivity
         parseQuery.whereEqualTo("CompName",details.getCompname());
         parseQuery.whereEqualTo("Title",details.getTitle());
         parseQuery.whereEqualTo("Dead",details.getDeadline());
+        parseQuery.whereEqualTo("username",currentUser);
 
         parseQuery.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -276,6 +280,7 @@ public class JobBanner extends AppCompatActivity
                     object.put("Dead",details.getDeadline());
                     object.put("Url",details.getJobUrl());
                     object.put("Logo",details.getLogo());
+                    object.put("username",currentUser);
 
                     String result = "";
 
