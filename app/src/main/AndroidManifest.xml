@@ -39,7 +39,8 @@
 
         <activity android:name=".Activities.ViewSavedJobs" />
         <activity android:name=".Activities.UserLogin" />
-        <activity android:name=".Activities.CompanyLogin"></activity>
+        <activity android:name=".Activities.CompanyLogin" />
+        <activity android:name=".Activities.UserDashboard"></activity>
     </application>
 
 </manifest>
