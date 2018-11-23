@@ -12,12 +12,12 @@ import cse.job.asif.job4cse.database.DatabaseHelper;
 
 public class MyBroadcastReceiver extends BroadcastReceiver {
 
-    private DatabaseHelper db;
+    //private DatabaseHelper db;
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        long id = intent.getLongExtra("id",-1);
+        int id = intent.getIntExtra("id",-1);
         String title = intent.getStringExtra("title");
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context,"Channel Two")
@@ -31,7 +31,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        notificationManager.notify((int)id,notification);
+        notificationManager.notify(id,notification);
 
     }
 }

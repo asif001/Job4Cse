@@ -21,8 +21,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.SaveCallback;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import cse.job.asif.job4cse.HelperClass.HtmlParse;
 import cse.job.asif.job4cse.HelperClass.JobDetails;
@@ -45,7 +52,7 @@ public class JobBanner extends AppCompatActivity
     private String currentUrl;
     private String origin;
     private Intent currentIntent;
-    private DatabaseHelper db;
+    //private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,9 +217,9 @@ public class JobBanner extends AppCompatActivity
         jobAdapter.setOnJobSaveListener(new OnJobSaveListener() {
             @Override
             public void onSave(JobDetails jobDetails) {
-                long id = db.insertJob(jobDetails);
-                if(id >= 0)
-                createNotification(id);
+
+                SaveToCloud(jobDetails);
+
             }
         });
 
@@ -222,24 +229,79 @@ public class JobBanner extends AppCompatActivity
 
         progressBar = findViewById(R.id.determinate);
         progressBar.setVisibility(View.GONE);
-        db = new DatabaseHelper(this);
+        //db = new DatabaseHelper(this);
 
     }
 
 
-    private void createNotification(long id){
-
-        final JobDetails details = db.getJob(id);
+    private void createNotification(JobDetails details){
 
         Intent notificationIntent = new Intent(this,MyBroadcastReceiver.class);
-        notificationIntent.putExtra("id",id);
+        notificationIntent.putExtra("id",details.getId());
         notificationIntent.putExtra("title",details.getTitle());
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, (int)id ,notificationIntent,PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, details.getId() ,notificationIntent,PendingIntent.FLAG_CANCEL_CURRENT);
 
         long futureInMills = SystemClock.elapsedRealtime() + 15000;
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,futureInMills,pendingIntent);
+
+    }
+
+    private void SaveToCloud(final JobDetails details){
+
+        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("Jobs");
+
+        parseQuery.whereEqualTo("CompName",details.getCompname());
+        parseQuery.whereEqualTo("Title",details.getTitle());
+        parseQuery.whereEqualTo("Dead",details.getDeadline());
+
+        parseQuery.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if(objects.size() > 0){
+
+                    return;
+
+                }
+                else{
+
+                    ParseObject object = new ParseObject("Jobs");
+
+                    object.put("Id",details.getId());
+                    object.put("CompName",details.getCompname());
+                    object.put("Title",details.getTitle());
+                    object.put("Location",details.getLocation());
+                    object.put("Exp",details.getExp());
+                    object.put("Dead",details.getDeadline());
+                    object.put("Url",details.getJobUrl());
+                    object.put("Logo",details.getLogo());
+
+                    String result = "";
+
+                    for(String qualifications : details.getQualifications()){
+
+                        result =  result + "\n" + qualifications;
+
+                    }
+
+                    object.put("Qualifications",result);
+
+                    object.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+
+                            createNotification(details);
+
+                        }
+                    });
+
+
+                }
+
+            }
+        });
 
     }
 }

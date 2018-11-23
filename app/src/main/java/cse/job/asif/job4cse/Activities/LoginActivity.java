@@ -10,7 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.SaveCallback;
+
 import java.util.ArrayList;
+import java.util.List;
 
 import cse.job.asif.job4cse.HelperClass.JobDetails;
 import cse.job.asif.job4cse.R;
@@ -65,4 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+
+
 }

@@ -10,12 +10,19 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import cse.job.asif.job4cse.HelperClass.JobDetails;
 import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.broadcasts.MyBroadcastReceiver;
-import cse.job.asif.job4cse.database.DatabaseHelper;
+//import cse.job.asif.job4cse.database.DatabaseHelper;
 import cse.job.asif.job4cse.interfaces.OnJobDeleteListener;
 import cse.job.asif.job4cse.interfaces.onJobViewListener;
 import cse.job.asif.job4cse.recyclerViews.JobSavedAdapter;
@@ -26,7 +33,7 @@ public class ViewSavedJobs extends AppCompatActivity {
     private JobSavedAdapter jobSavedAdapter;
     private RecyclerView rvJobs;
     private Intent currentIntent;
-    private DatabaseHelper db;
+    //private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +41,12 @@ public class ViewSavedJobs extends AppCompatActivity {
         setContentView(R.layout.activity_view_saved_jobs);
         init();
         initRecyclerView();
+        readData();
     }
 
     public void init(){
 
-        db = new DatabaseHelper(this);
+        //db = new DatabaseHelper(this);
         jobList = new ArrayList<>();
 
     }
@@ -46,8 +54,6 @@ public class ViewSavedJobs extends AppCompatActivity {
     private void initRecyclerView(){
 
         rvJobs = (RecyclerView) findViewById(R.id.JobSavedList);
-
-        db.getAllJobs(jobList);
 
         jobSavedAdapter = new JobSavedAdapter(jobList);
 
@@ -80,16 +86,80 @@ public class ViewSavedJobs extends AppCompatActivity {
 
                 am.cancel(pendingIntent);
 
-                db.deleteJob(jobDetails);
+                //db.deleteJob(jobDetails);
 
-                jobList.clear();
+                DeleteParse(jobDetails);
 
-                db.getAllJobs(jobList);
+            }
+        });
+
+    }
+
+    private void readData(){
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Jobs");
+
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                for(ParseObject object : objects){
+
+                    JobDetails details = new JobDetails();
+
+                    details.setId(object.getInt("Id"));
+                    details.setCompname(object.getString("CompName"));
+                    details.setDeadline(object.getString("Dead"));
+                    details.setExp(object.getString("Exp"));
+                    details.setJobUrl(object.getString("Url"));
+                    details.setLocation(object.getString("Location"));
+                    details.setLogo(object.getString("Logo"));
+                    details.setTitle(object.getString("Title"));
+                    ArrayList<String> list = new ArrayList<>(Arrays.asList(object.getString("Qualifications").split("\n")));
+                    details.setQualifications(list);
+
+                    jobList.add(details);
+
+                }
 
                 jobSavedAdapter.notifyDataSetChanged();
 
             }
         });
+
+
+    }
+
+    private void DeleteParse(JobDetails jobDetails){
+
+
+        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("Jobs");
+
+        parseQuery.whereEqualTo("Id",jobDetails.getId());
+
+        parseQuery.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                for(ParseObject object : objects){
+
+                    try {
+                        object.delete();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+
+                    object.saveInBackground();
+
+                }
+
+                jobList.clear();
+
+                readData();
+
+            }
+        });
+
 
     }
 }

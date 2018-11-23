@@ -153,6 +153,7 @@ public class HtmlParse {
                 jobDetails.setQualifications(getQualifications(JobElement));
                 jobDetails.setExp(getExp(JobElement));
                 jobDetails.setDeadline(getDeadline(JobElement));
+                jobDetails.setId(Sequence.nextValue());
 
                 JobList.add(jobDetails);
 
