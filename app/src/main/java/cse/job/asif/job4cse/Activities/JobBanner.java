@@ -35,7 +35,6 @@ import cse.job.asif.job4cse.HelperClass.HtmlParse;
 import cse.job.asif.job4cse.HelperClass.JobDetails;
 import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.broadcasts.MyBroadcastReceiver;
-import cse.job.asif.job4cse.database.DatabaseHelper;
 import cse.job.asif.job4cse.interfaces.OnBottomReachedListener;
 import cse.job.asif.job4cse.interfaces.OnJobSaveListener;
 import cse.job.asif.job4cse.interfaces.onJobViewListener;

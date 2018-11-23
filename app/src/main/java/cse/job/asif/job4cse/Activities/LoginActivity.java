@@ -24,35 +24,31 @@ import cse.job.asif.job4cse.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private  ArrayList<JobDetails> jobDetails;
-    private Button button,btnView;
-    private  TextView textView;
+    private Button btnUser;
+    private Button btnCompany;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        button = findViewById(R.id.buttonShow);
-        btnView = findViewById(R.id.buttonLoginView);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),JobBanner.class);
-                startActivity(intent);
-            }
-        });
-
-        btnView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ViewSavedJobs.class);
-                startActivity(intent);
-            }
-        });
+        init();
 
         createNotificationChannel();
+
+    }
+
+    private void init(){
+
+        btnUser = findViewById(R.id.buttonUser);
+        btnCompany = findViewById(R.id.buttonCompany);
+
+        btnUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),UserLogin.class));
+            }
+        });
 
     }
 

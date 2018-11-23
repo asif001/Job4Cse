@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
 import cse.job.asif.job4cse.R;
-import cse.job.asif.job4cse.database.DatabaseHelper;
 
 public class MyBroadcastReceiver extends BroadcastReceiver {
 
