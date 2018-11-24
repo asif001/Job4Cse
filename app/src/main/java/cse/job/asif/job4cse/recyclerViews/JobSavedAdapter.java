@@ -15,6 +15,7 @@ import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.interfaces.OnBottomReachedListener;
 import cse.job.asif.job4cse.interfaces.OnJobDeleteListener;
 import cse.job.asif.job4cse.interfaces.OnJobSaveListener;
+import cse.job.asif.job4cse.interfaces.onJobApplyListener;
 
 public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myViewHolder> {
 
@@ -23,6 +24,8 @@ public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myView
     private cse.job.asif.job4cse.interfaces.onJobViewListener onJobViewListener;
 
     private OnJobDeleteListener onJobDeleteListener;
+
+    private cse.job.asif.job4cse.interfaces.onJobApplyListener onJobApplyListener;
 
     public JobSavedAdapter(ArrayList<JobDetails> JobList){
         this.JobList = JobList;
@@ -77,6 +80,13 @@ public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myView
             }
         });
 
+        myViewHolder.buttonApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onJobApplyListener.apply(jobDetails);
+            }
+        });
+
     }
 
     @Override
@@ -95,6 +105,12 @@ public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myView
         this.onJobDeleteListener = onJobDeleteListener;
     }
 
+    public void setOnJobApplyListener(onJobApplyListener onJobApplyListener){
+
+        this.onJobApplyListener = onJobApplyListener;
+
+    }
+
     public class myViewHolder extends RecyclerView.ViewHolder{
 
         public TextView compName;
@@ -105,6 +121,7 @@ public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myView
         public TextView qualifications;
         public Button buttonView;
         public Button buttonDelete;
+        public Button buttonApply;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -117,6 +134,7 @@ public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myView
             qualifications = (TextView) itemView.findViewById(R.id.SavedcompQualifications);
             buttonView = (Button) itemView.findViewById(R.id.SavedbuttonView);
             buttonDelete = (Button) itemView.findViewById(R.id.SavedbuttonDelete);
+            buttonApply = (Button) itemView.findViewById(R.id.savedbuttonApply);
 
         }
     }

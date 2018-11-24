@@ -9,12 +9,14 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,6 +27,7 @@ import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.broadcasts.MyBroadcastReceiver;
 //import cse.job.asif.job4cse.database.DatabaseHelper;
 import cse.job.asif.job4cse.interfaces.OnJobDeleteListener;
+import cse.job.asif.job4cse.interfaces.onJobApplyListener;
 import cse.job.asif.job4cse.interfaces.onJobViewListener;
 import cse.job.asif.job4cse.recyclerViews.JobSavedAdapter;
 
@@ -93,6 +96,26 @@ public class ViewSavedJobs extends AppCompatActivity {
 
                 DeleteParse(jobDetails);
 
+            }
+        });
+
+        jobSavedAdapter.setOnJobApplyListener(new onJobApplyListener() {
+            @Override
+            public void apply(JobDetails details) {
+
+                ParseObject parseObject = new ParseObject("AppliedJobs");
+
+                parseObject.put("username",ParseUser.getCurrentUser().getUsername());
+                parseObject.put("JobId",details.getId());
+
+                parseObject.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+
+                        Toast.makeText(getApplicationContext(),"Applied",Toast.LENGTH_LONG).show();
+
+                    }
+                });
             }
         });
 

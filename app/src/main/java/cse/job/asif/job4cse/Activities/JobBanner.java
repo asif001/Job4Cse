@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -38,6 +39,7 @@ import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.broadcasts.MyBroadcastReceiver;
 import cse.job.asif.job4cse.interfaces.OnBottomReachedListener;
 import cse.job.asif.job4cse.interfaces.OnJobSaveListener;
+import cse.job.asif.job4cse.interfaces.onJobApplyListener;
 import cse.job.asif.job4cse.interfaces.onJobViewListener;
 import cse.job.asif.job4cse.recyclerViews.JobAdapter;
 
@@ -220,6 +222,27 @@ public class JobBanner extends AppCompatActivity
             public void onSave(JobDetails jobDetails) {
 
                 SaveToCloud(jobDetails);
+
+            }
+        });
+
+        jobAdapter.setOnJobApplyListener(new onJobApplyListener() {
+            @Override
+            public void apply(JobDetails details) {
+
+                ParseObject parseObject = new ParseObject("AppliedJobs");
+
+                parseObject.put("username",ParseUser.getCurrentUser().getUsername());
+                parseObject.put("JobId",details.getId());
+
+                parseObject.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+
+                        Toast.makeText(getApplicationContext(),"Applied",Toast.LENGTH_LONG).show();
+
+                    }
+                });
 
             }
         });

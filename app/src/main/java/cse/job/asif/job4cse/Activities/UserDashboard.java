@@ -15,7 +15,7 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
     private TextView btnSearchJob;
     private TextView btnSavedJobs;
     private TextView btnInterView;
-    private TextView btnNotification;
+    //private TextView btnNotification;
     private TextView btnProfile;
 
     @Override
@@ -31,7 +31,7 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
         btnSearchJob = findViewById(R.id.searchJob);
         btnSavedJobs = findViewById(R.id.savedJobs);
         btnInterView = findViewById(R.id.interview);
-        btnNotification = findViewById(R.id.notification);
+        //btnNotification = findViewById(R.id.notification);
         btnProfile = findViewById(R.id.userProfile);
 
         btnSearchJob.setOnClickListener(new View.OnClickListener() {

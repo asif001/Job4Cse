@@ -25,9 +25,8 @@ public class ViewJobDetails extends AppCompatActivity {
 
         url = intent.getStringExtra("Url");
         //HostUrl = intent.getStringExtra("Origin");
-
+        viewUrl.getSettings().setJavaScriptEnabled(true);
         viewUrl = findViewById(R.id.webView);
-        viewUrl.loadUrl(url);
         viewUrl.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
@@ -35,9 +34,10 @@ public class ViewJobDetails extends AppCompatActivity {
                 view.loadUrl(request.getUrl().toString());
                 return false;
             }
+
         });
 
-        viewUrl.getSettings().setJavaScriptEnabled(true);
+        viewUrl.loadUrl(url);
 
     }
 

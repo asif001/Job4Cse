@@ -15,6 +15,7 @@ import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.interfaces.OnBottomReachedListener;
 import cse.job.asif.job4cse.interfaces.OnJobSaveListener;
 import cse.job.asif.job4cse.interfaces.onJobViewListener;
+import cse.job.asif.job4cse.interfaces.onJobApplyListener;
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
 
@@ -25,6 +26,8 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
     private cse.job.asif.job4cse.interfaces.onJobViewListener onJobViewListener;
 
     private OnJobSaveListener onJobSaveListener;
+
+    private cse.job.asif.job4cse.interfaces.onJobApplyListener onJobApplyListener;
 
     public JobAdapter(ArrayList<JobDetails> JobList){
         this.JobList = JobList;
@@ -83,6 +86,13 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
             }
         });
 
+        myViewHolder.buttonApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onJobApplyListener.apply(jobDetails);
+            }
+        });
+
     }
 
     @Override
@@ -107,6 +117,12 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
         this.onJobSaveListener = onJobSaveListener;
     }
 
+    public void setOnJobApplyListener(onJobApplyListener onJobApplyListener){
+
+        this.onJobApplyListener = onJobApplyListener;
+
+    }
+
     public class myViewHolder extends RecyclerView.ViewHolder{
 
         public TextView compName;
@@ -117,6 +133,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
         public TextView qualifications;
         public Button buttonView;
         public Button buttonSave;
+        public Button buttonApply;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -129,6 +146,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.myViewHolder> {
             qualifications = (TextView) itemView.findViewById(R.id.compQualifications);
             buttonView = (Button) itemView.findViewById(R.id.buttonView);
             buttonSave = (Button) itemView.findViewById(R.id.buttonSave);
+            buttonApply = (Button) itemView.findViewById(R.id.buttonApply);
 
         }
     }
