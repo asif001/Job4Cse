@@ -5,8 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".HelperClass.MainApp"
@@ -44,7 +44,8 @@
         <activity android:name=".Activities.CompanyLogin" />
         <activity android:name=".Activities.UserDashboard" />
         <activity android:name=".Activities.company_dashboard" />
-        <activity android:name=".Activities.user_profile"></activity>
+        <activity android:name=".Activities.user_profile" />
+        <activity android:name=".Activities.user_signup"></activity>
     </application>
 
 </manifest>

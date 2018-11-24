@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -21,6 +22,7 @@ public class UserLogin extends AppCompatActivity {
     private EditText editUserName;
     private EditText editPassword;
     private Button   btnLogin;
+    private TextView btnSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +37,19 @@ public class UserLogin extends AppCompatActivity {
             editUserName = findViewById(R.id.userName);
             editPassword = findViewById(R.id.userPass);
             btnLogin = findViewById(R.id.userLogin);
+            btnSignup = findViewById(R.id.userSignUp);
 
             btnLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     doLogin(editUserName.getText().toString(), editPassword.getText().toString());
+                }
+            });
+
+            btnSignup.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(),user_signup.class));
                 }
             });
 
