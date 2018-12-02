@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
+import com.parse.LogOutCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import cse.job.asif.job4cse.HelperClass.checkLogn;
@@ -71,8 +72,22 @@ public class UserLogin extends AppCompatActivity {
 
                     if(user != null){
 
-                        checkLogn.isLogged = 1;
-                        startActivityForResult(new Intent(getApplicationContext(),UserDashboard.class),1);
+                        if((int)user.getNumber("isUser") == 1) {
+                            checkLogn.isLogged = 1;
+                            startActivityForResult(new Intent(getApplicationContext(), UserDashboard.class), 1);
+                        }
+
+                        else{
+
+                            Toast.makeText(getApplicationContext(),"Login failed",Toast.LENGTH_SHORT).show();
+                            ParseUser.logOutInBackground(new LogOutCallback() {
+                                @Override
+                                public void done(ParseException e) {
+
+                                }
+                            });
+
+                        }
 
                     }
                     else{

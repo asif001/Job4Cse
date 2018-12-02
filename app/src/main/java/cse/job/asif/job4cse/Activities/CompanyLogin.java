@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
+import com.parse.LogOutCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
@@ -32,9 +33,9 @@ public class CompanyLogin extends AppCompatActivity {
 
     private void init(){
 
-        editUserName = findViewById(R.id.userName);
-        editPassword = findViewById(R.id.userPass);
-        btnLogin = findViewById(R.id.userLogin);
+        editUserName = findViewById(R.id.compID);
+        editPassword = findViewById(R.id.compPass);
+        btnLogin = findViewById(R.id.compLogin);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +52,7 @@ public class CompanyLogin extends AppCompatActivity {
 
         if(userName.isEmpty() || userpassword.isEmpty()){
 
-            Toast.makeText(getApplicationContext(),"Invalid username or password",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Invalid company_id or password",Toast.LENGTH_LONG).show();
 
         }
 
@@ -63,8 +64,22 @@ public class CompanyLogin extends AppCompatActivity {
 
                     if(user != null){
 
-                        checkLogn.isLogged = 1;
-                        startActivityForResult(new Intent(getApplicationContext(),UserDashboard.class),1);
+                        if((int)user.getNumber("isUser") == 0) {
+                            checkLogn.isLogged = 1;
+                            startActivityForResult(new Intent(getApplicationContext(), company_dashboard.class), 1);
+                        }
+
+                        else{
+
+                            Toast.makeText(getApplicationContext(),"Login failed",Toast.LENGTH_SHORT).show();
+                            ParseUser.logOutInBackground(new LogOutCallback() {
+                                @Override
+                                public void done(ParseException e) {
+
+                                }
+                            });
+
+                        }
 
                     }
                     else{

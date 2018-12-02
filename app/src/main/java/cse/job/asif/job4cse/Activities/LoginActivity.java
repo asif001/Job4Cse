@@ -29,8 +29,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         createNotificationChannel();
 
         if(ParseUser.getCurrentUser() != null){
-            checkLogn.isLogged = 1;
-            startActivityForResult(new Intent(getApplicationContext(),UserDashboard.class),1);
+
+            if((int)ParseUser.getCurrentUser().getNumber("isUser") == 1) {
+
+                startActivityForResult(new Intent(getApplicationContext(), UserDashboard.class), 1);
+
+            }
+
+            else{
+
+                startActivityForResult(new Intent(getApplicationContext(), company_dashboard.class), 1);
+
+            }
         }
 
 

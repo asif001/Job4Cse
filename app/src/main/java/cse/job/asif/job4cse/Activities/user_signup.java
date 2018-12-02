@@ -65,13 +65,12 @@ public class user_signup extends AppCompatActivity {
 
         }
 
-        else if(!hasUser()){
 
-            if(!editPassword.getText().toString().equals(editConfirmPass.getText().toString())){
+        else if(!editPassword.getText().toString().equals(editConfirmPass.getText().toString())){
 
                 Toast.makeText(getApplicationContext(),"Password didnot match",Toast.LENGTH_LONG).show();
 
-            }
+        }
 
             else{
 
@@ -80,6 +79,8 @@ public class user_signup extends AppCompatActivity {
                 user.setUsername(editUsername.getText().toString());
                 user.setEmail(editEamil.getText().toString());
                 user.setPassword(editPassword.getText().toString());
+                user.put("isUser",1);
+                user.put("name",editName.getText().toString());
 
                 user.signUpInBackground(new SignUpCallback() {
                     @Override
@@ -87,24 +88,8 @@ public class user_signup extends AppCompatActivity {
 
                         if(e == null){
 
-                            ParseObject parseObject = new ParseObject("UserDetails");
-                            parseObject.put("name",editName.getText().toString());
-                            parseObject.put("username",editUsername.getText().toString());
-                            parseObject.put("email",editEamil.getText().toString());
-
-                            parseObject.saveInBackground(new SaveCallback() {
-                                @Override
-                                public void done(ParseException e) {
-
-                                    if(e == null){
-
-                                        Toast.makeText(getApplicationContext(),"Successgully signed up!",Toast.LENGTH_LONG).show();
-                                        finish();
-
-                                    }
-
-                                }
-                            });
+                            Toast.makeText(getApplicationContext(),"Successgully signed up!",Toast.LENGTH_LONG).show();
+                            finish();
 
                         }
 
@@ -119,38 +104,7 @@ public class user_signup extends AppCompatActivity {
 
             }
 
-        }
 
-
-    }
-
-
-    public boolean hasUser(){
-
-        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("UserDetails");
-
-        parseQuery.whereEqualTo("username",editUsername.getText().toString());
-
-        parseQuery.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-
-                if(objects.size() > 0){
-
-                    check = true;
-
-                }
-
-                else{
-
-                    check = false;
-
-                }
-
-            }
-        });
-
-        return check;
     }
 
 

@@ -27,6 +27,7 @@ import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.broadcasts.MyBroadcastReceiver;
 //import cse.job.asif.job4cse.database.DatabaseHelper;
 import cse.job.asif.job4cse.interfaces.OnJobDeleteListener;
+import cse.job.asif.job4cse.interfaces.OnJobisAppliedListener;
 import cse.job.asif.job4cse.interfaces.onJobApplyListener;
 import cse.job.asif.job4cse.interfaces.onJobViewListener;
 import cse.job.asif.job4cse.recyclerViews.JobSavedAdapter;
@@ -103,21 +104,28 @@ public class ViewSavedJobs extends AppCompatActivity {
             @Override
             public void apply(JobDetails details) {
 
-                ParseObject parseObject = new ParseObject("AppliedJobs");
-
-                parseObject.put("username",ParseUser.getCurrentUser().getUsername());
-                parseObject.put("JobId",details.getId());
-
-                parseObject.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-
-                        Toast.makeText(getApplicationContext(),"Applied",Toast.LENGTH_LONG).show();
-
-                    }
-                });
+                SaveToApply(details);
             }
         });
+
+        if(getIntent().getStringExtra("isApplied").equals("0")){
+            jobSavedAdapter.setOnJobisAppliedListener(new OnJobisAppliedListener() {
+                @Override
+                public boolean isApplied() {
+                    return false;
+                }
+            });
+        }
+        else{
+
+            jobSavedAdapter.setOnJobisAppliedListener(new OnJobisAppliedListener() {
+                @Override
+                public boolean isApplied() {
+                    return true;
+                }
+            });
+
+        }
 
     }
 
@@ -125,6 +133,13 @@ public class ViewSavedJobs extends AppCompatActivity {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Jobs");
         query.whereEqualTo("username",currentUser);
+
+        if(getIntent().getStringExtra("isApplied").equals("0")) {
+            query.whereEqualTo("isApplied", 0);
+        }
+        else {
+            query.whereEqualTo("isApplied", 1);
+        }
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -187,6 +202,69 @@ public class ViewSavedJobs extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void SaveToApply(final JobDetails details){
+
+        DeleteParse(details);
+
+        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("Jobs");
+
+        parseQuery.whereEqualTo("CompName",details.getCompname());
+        parseQuery.whereEqualTo("Title",details.getTitle());
+        parseQuery.whereEqualTo("Dead",details.getDeadline());
+        parseQuery.whereEqualTo("username",currentUser);
+        parseQuery.whereEqualTo("isApplied",1);
+
+        parseQuery.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if(objects.size() > 0){
+
+                    return;
+
+                }
+                else{
+
+                    ParseObject object = new ParseObject("Jobs");
+
+                    object.put("Id",details.getId());
+                    object.put("CompName",details.getCompname());
+                    object.put("Title",details.getTitle());
+                    object.put("Location",details.getLocation());
+                    object.put("Exp",details.getExp());
+                    object.put("Dead",details.getDeadline());
+                    object.put("Url",details.getJobUrl());
+                    object.put("Logo",details.getLogo());
+                    object.put("username",currentUser);
+
+                    String result = "";
+
+                    for(String qualifications : details.getQualifications()){
+
+                        result =  result + "\n" + qualifications;
+
+                    }
+
+                    object.put("Qualifications",result);
+                    object.put("isApplied",1);
+
+                    object.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+
+                            Toast.makeText(getApplicationContext(),"Successfully Applied",Toast.LENGTH_LONG).show();
+
+                        }
+                    });
+
+
+                }
+
+            }
+        });
 
     }
 }

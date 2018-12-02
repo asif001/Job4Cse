@@ -15,6 +15,7 @@ import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.interfaces.OnBottomReachedListener;
 import cse.job.asif.job4cse.interfaces.OnJobDeleteListener;
 import cse.job.asif.job4cse.interfaces.OnJobSaveListener;
+import cse.job.asif.job4cse.interfaces.OnJobisAppliedListener;
 import cse.job.asif.job4cse.interfaces.onJobApplyListener;
 
 public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myViewHolder> {
@@ -26,6 +27,8 @@ public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myView
     private OnJobDeleteListener onJobDeleteListener;
 
     private cse.job.asif.job4cse.interfaces.onJobApplyListener onJobApplyListener;
+
+    private cse.job.asif.job4cse.interfaces.OnJobisAppliedListener onJobisAppliedListener;
 
     public JobSavedAdapter(ArrayList<JobDetails> JobList){
         this.JobList = JobList;
@@ -80,12 +83,19 @@ public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myView
             }
         });
 
-        myViewHolder.buttonApply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onJobApplyListener.apply(jobDetails);
-            }
-        });
+        if(!onJobisAppliedListener.isApplied()) {
+
+            myViewHolder.buttonApply.setVisibility(View.VISIBLE);
+            myViewHolder.buttonApply.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onJobApplyListener.apply(jobDetails);
+                }
+            });
+        }
+        else{
+            myViewHolder.buttonApply.setVisibility(View.GONE);
+        }
 
     }
 
@@ -108,6 +118,12 @@ public class JobSavedAdapter extends RecyclerView.Adapter<JobSavedAdapter.myView
     public void setOnJobApplyListener(onJobApplyListener onJobApplyListener){
 
         this.onJobApplyListener = onJobApplyListener;
+
+    }
+
+    public void setOnJobisAppliedListener(OnJobisAppliedListener onJobisAppliedListener){
+
+        this.onJobisAppliedListener = onJobisAppliedListener;
 
     }
 

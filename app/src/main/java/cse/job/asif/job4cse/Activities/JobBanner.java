@@ -230,19 +230,7 @@ public class JobBanner extends AppCompatActivity
             @Override
             public void apply(JobDetails details) {
 
-                ParseObject parseObject = new ParseObject("AppliedJobs");
-
-                parseObject.put("username",ParseUser.getCurrentUser().getUsername());
-                parseObject.put("JobId",details.getId());
-
-                parseObject.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-
-                        Toast.makeText(getApplicationContext(),"Applied",Toast.LENGTH_LONG).show();
-
-                    }
-                });
+                SaveToApply(details);
 
             }
         });
@@ -281,6 +269,7 @@ public class JobBanner extends AppCompatActivity
         parseQuery.whereEqualTo("Title",details.getTitle());
         parseQuery.whereEqualTo("Dead",details.getDeadline());
         parseQuery.whereEqualTo("username",currentUser);
+        parseQuery.whereEqualTo("isApplied",0);
 
         parseQuery.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -314,12 +303,14 @@ public class JobBanner extends AppCompatActivity
                     }
 
                     object.put("Qualifications",result);
+                    object.put("isApplied",0);
 
                     object.saveInBackground(new SaveCallback() {
                         @Override
                         public void done(ParseException e) {
 
                             createNotification(details);
+                            Toast.makeText(getApplicationContext(),"Successfully Saved",Toast.LENGTH_LONG).show();
 
                         }
                     });
@@ -331,4 +322,66 @@ public class JobBanner extends AppCompatActivity
         });
 
     }
+
+    private void SaveToApply(final JobDetails details){
+
+        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("Jobs");
+
+        parseQuery.whereEqualTo("CompName",details.getCompname());
+        parseQuery.whereEqualTo("Title",details.getTitle());
+        parseQuery.whereEqualTo("Dead",details.getDeadline());
+        parseQuery.whereEqualTo("username",currentUser);
+        parseQuery.whereEqualTo("isApplied",1);
+
+        parseQuery.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if(objects.size() > 0){
+
+                    return;
+
+                }
+                else{
+
+                    ParseObject object = new ParseObject("Jobs");
+
+                    object.put("Id",details.getId());
+                    object.put("CompName",details.getCompname());
+                    object.put("Title",details.getTitle());
+                    object.put("Location",details.getLocation());
+                    object.put("Exp",details.getExp());
+                    object.put("Dead",details.getDeadline());
+                    object.put("Url",details.getJobUrl());
+                    object.put("Logo",details.getLogo());
+                    object.put("username",currentUser);
+
+                    String result = "";
+
+                    for(String qualifications : details.getQualifications()){
+
+                        result =  result + "\n" + qualifications;
+
+                    }
+
+                    object.put("Qualifications",result);
+                    object.put("isApplied",1);
+
+                    object.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+
+                            Toast.makeText(getApplicationContext(),"Successfully Applied",Toast.LENGTH_LONG).show();
+
+                        }
+                    });
+
+
+                }
+
+            }
+        });
+
+    }
+
 }

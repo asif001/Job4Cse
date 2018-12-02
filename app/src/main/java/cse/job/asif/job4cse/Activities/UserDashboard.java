@@ -17,6 +17,7 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
     private TextView btnInterView;
     //private TextView btnNotification;
     private TextView btnProfile;
+    private TextView btnAppliedJobs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
         btnInterView = findViewById(R.id.interview);
         //btnNotification = findViewById(R.id.notification);
         btnProfile = findViewById(R.id.userProfile);
+        btnAppliedJobs = findViewById(R.id.savedApplied);
 
         btnSearchJob.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,11 +46,15 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
         btnSavedJobs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),ViewSavedJobs.class));
+
+                Intent intent = new Intent(getApplicationContext(),ViewSavedJobs.class);
+                intent.putExtra("isApplied","0");
+                startActivity(intent);
             }
         });
 
         btnProfile.setOnClickListener(this);
+        btnAppliedJobs.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +63,14 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
         if(v.getId() == R.id.userProfile){
 
             startActivityForResult(new Intent(getApplicationContext(),user_profile.class),1);
+
+        }
+
+        else if(v.getId() == R.id.savedApplied){
+
+            Intent intent = new Intent(getApplicationContext(),ViewSavedJobs.class);
+            intent.putExtra("isApplied","1");
+            startActivity(intent);
 
         }
 
