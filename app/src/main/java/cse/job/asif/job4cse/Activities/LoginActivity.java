@@ -36,11 +36,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             }
 
-            else{
-
-                startActivityForResult(new Intent(getApplicationContext(), company_dashboard.class), 1);
-
-            }
         }
 
 

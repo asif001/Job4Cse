@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -304,6 +305,7 @@ public class JobBanner extends AppCompatActivity
 
                     object.put("Qualifications",result);
                     object.put("isApplied",0);
+                    object.put("name",ParseUser.getCurrentUser().getString("name"));
 
                     object.saveInBackground(new SaveCallback() {
                         @Override
@@ -366,6 +368,7 @@ public class JobBanner extends AppCompatActivity
 
                     object.put("Qualifications",result);
                     object.put("isApplied",1);
+                    object.put("name",ParseUser.getCurrentUser().getString("name"));
 
                     object.saveInBackground(new SaveCallback() {
                         @Override

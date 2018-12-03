@@ -250,6 +250,7 @@ public class ViewSavedJobs extends AppCompatActivity {
 
                     object.put("Qualifications",result);
                     object.put("isApplied",1);
+                    object.put("name",ParseUser.getCurrentUser().getString("name"));
 
                     object.saveInBackground(new SaveCallback() {
                         @Override
