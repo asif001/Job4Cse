@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -23,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import cse.job.asif.job4cse.HelperClass.AppliedJobDetails;
+import cse.job.asif.job4cse.HelperClass.DateDialog;
 import cse.job.asif.job4cse.HelperClass.JobDetails;
 import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.broadcasts.MyBroadcastReceiver;
@@ -35,7 +37,9 @@ import cse.job.asif.job4cse.interfaces.onJobViewListener;
 import cse.job.asif.job4cse.recyclerViews.JobAppliedAdapter;
 import cse.job.asif.job4cse.recyclerViews.JobSavedAdapter;
 
-public class company_dashboard extends AppCompatActivity {
+public class company_dashboard extends AppCompatActivity implements DateDialog.DateDialogListener {
+
+    private AppliedJobDetails details;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,11 +161,28 @@ public class company_dashboard extends AppCompatActivity {
 
     private void accept(AppliedJobDetails details){
 
+        this.details = details;
+        DialogFragment dialogFragment = new DateDialog();
+        dialogFragment.show(getSupportFragmentManager(),"missiles");
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        setResult(RESULT_OK,new Intent());
+        finish();
+    }
+
+    @Override
+    public void onDialogPositiveClick(DateDialog dialog) {
+
         ParseObject parseObject = new ParseObject("InterView");
 
         parseObject.put("username",details.getUsername());
         parseObject.put("Title",details.getJobTitle());
         parseObject.put("CompName",currentUser);
+        parseObject.put("Date",dialog.getMsg());
 
         parseObject.saveInBackground(new SaveCallback() {
             @Override
@@ -175,10 +196,9 @@ public class company_dashboard extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        setResult(RESULT_OK,new Intent());
-        finish();
-    }
+    public void onDialogNegativeClick(DateDialog dialog) {
 
+
+
+    }
 }

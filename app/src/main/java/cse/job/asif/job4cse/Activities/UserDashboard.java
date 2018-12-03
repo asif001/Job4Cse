@@ -53,6 +53,13 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
             }
         });
 
+        btnInterView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),InterviewActivity.class));
+            }
+        });
+
         btnProfile.setOnClickListener(this);
         btnAppliedJobs.setOnClickListener(this);
     }

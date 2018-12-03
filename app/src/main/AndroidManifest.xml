@@ -45,7 +45,8 @@
         <activity android:name=".Activities.UserDashboard" />
         <activity android:name=".Activities.company_dashboard" />
         <activity android:name=".Activities.user_profile" />
-        <activity android:name=".Activities.user_signup"></activity>
+        <activity android:name=".Activities.user_signup" />
+        <activity android:name=".Activities.InterviewActivity"></activity>
     </application>
 
 </manifest>
