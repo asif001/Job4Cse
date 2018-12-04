@@ -10,14 +10,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.LogOutCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.File;
+import java.util.List;
 
 import cse.job.asif.job4cse.HelperClass.checkLogn;
 
@@ -83,23 +86,51 @@ public class user_profile extends AppCompatActivity {
 
                     String path = data.getData().getPath();
 
-                    path = path.replace("/document/primary:","/");
+                    //path = path.replace("/document/primary:","/");
 
-                    final ParseFile parseFile = new ParseFile(new File(Environment.getExternalStorageDirectory().getAbsolutePath() + path));
+                    final ParseFile parseFile = new ParseFile(new File(path));
                     Toast.makeText(getApplicationContext(),path,Toast.LENGTH_LONG).show();
 
                     parseFile.saveInBackground(new SaveCallback() {
                         @Override
                         public void done(ParseException e) {
-                            ParseObject parseObject = new ParseObject("Files");
 
-                            parseObject.put("username","Asif");
-                            parseObject.put("CV",parseFile);
+                            ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("Files");
 
-                            parseObject.saveInBackground(new SaveCallback() {
+                            parseQuery.whereEqualTo("username",ParseUser.getCurrentUser().getUsername());
+
+                            parseQuery.findInBackground(new FindCallback<ParseObject>() {
                                 @Override
-                                public void done(ParseException e) {
-                                    Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_LONG).show();
+                                public void done(List<ParseObject> objects, ParseException e) {
+
+                                    if(objects.size() > 0){
+
+                                        objects.get(0).put("CV",parseFile);
+                                        objects.get(0).saveInBackground(new SaveCallback() {
+                                            @Override
+                                            public void done(ParseException e) {
+                                                Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_LONG).show();
+                                            }
+                                        });
+
+                                    }
+
+                                    else{
+
+                                        ParseObject parseObject = new ParseObject("Files");
+
+                                        parseObject.put("username",ParseUser.getCurrentUser().getUsername());
+                                        parseObject.put("CV",parseFile);
+
+                                        parseObject.saveInBackground(new SaveCallback() {
+                                            @Override
+                                            public void done(ParseException e) {
+                                                Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_LONG).show();
+                                            }
+                                        });
+
+                                    }
+
                                 }
                             });
 

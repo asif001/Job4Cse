@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -56,6 +57,8 @@ public class JobBanner extends AppCompatActivity
     private String origin;
     private Intent currentIntent;
     private String currentUser;
+    private TextView navEmail;
+    private View header;
     //private DatabaseHelper db;
 
     @Override
@@ -82,6 +85,7 @@ public class JobBanner extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        header = navigationView.getHeaderView(0);
 
         init();
         initRecyclerView();
@@ -126,20 +130,35 @@ public class JobBanner extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_archtect) {
+
+            jobList.clear();
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=5&icatId=",currentPage);
+
+        } else if (id == R.id.nav_tele) {
 
             jobList.clear();
             showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=",currentPage);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_bank) {
 
-        } else if (id == R.id.nav_manage) {
+            jobList.clear();
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=2&icatId=",currentPage);
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_research) {
 
-        } else if (id == R.id.nav_send) {
+            jobList.clear();
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=13&icatId=",currentPage);
+
+        } else if (id == R.id.nav_data) {
+
+            jobList.clear();
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=15&icatId=",currentPage);
+
+        } else if (id == R.id.nav_design) {
+
+            jobList.clear();
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=18&icatId=",currentPage);
 
         }
 
@@ -240,9 +259,13 @@ public class JobBanner extends AppCompatActivity
 
     private void init(){
 
+        navEmail = header.findViewById(R.id.navEmail);
         progressBar = findViewById(R.id.determinate);
         progressBar.setVisibility(View.GONE);
         currentUser = ParseUser.getCurrentUser().getUsername();
+
+        navEmail.setText(ParseUser.getCurrentUser().getEmail());
+
         //db = new DatabaseHelper(this);
 
     }

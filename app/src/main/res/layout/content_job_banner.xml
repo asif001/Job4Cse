@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.JobBanner"
+    android:background="@drawable/background"
     tools:showIn="@layout/app_bar_job_banner">
 
     <ProgressBar

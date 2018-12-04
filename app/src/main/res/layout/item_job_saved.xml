@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="#AA8"
+    android:background="@drawable/item"
     android:padding="28dp">
 
     <Button
@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Apply"
+        android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="View"
+        android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -41,6 +43,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="TextView"
+        android:textStyle="bold"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="TextView"
+        android:textStyle="bold"
         android:gravity="center"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="TextView"
+        android:textStyle="bold"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SavedcompQualifications" />
@@ -74,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="TextView"
+        android:textStyle="bold"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SavedcompLocation" />
@@ -84,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="TextView"
+        android:textStyle="bold"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SavedcompExp" />
@@ -96,6 +103,7 @@
         android:text="TextView"
         android:textSize="17sp"
         android:gravity="left"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SavedcompName" />
@@ -107,6 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Delete"
+        android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

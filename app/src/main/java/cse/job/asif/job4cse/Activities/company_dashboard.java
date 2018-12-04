@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -28,6 +30,7 @@ import cse.job.asif.job4cse.HelperClass.DateDialog;
 import cse.job.asif.job4cse.HelperClass.JobDetails;
 import cse.job.asif.job4cse.R;
 import cse.job.asif.job4cse.broadcasts.MyBroadcastReceiver;
+import cse.job.asif.job4cse.interfaces.OnCvListener;
 import cse.job.asif.job4cse.interfaces.OnJobAcceptListener;
 import cse.job.asif.job4cse.interfaces.OnJobDeleteListener;
 import cse.job.asif.job4cse.interfaces.OnJobRejectListener;
@@ -93,6 +96,15 @@ public class company_dashboard extends AppCompatActivity implements DateDialog.D
             }
         });
 
+        jobAppliedAdapter.setOnCvListener(new OnCvListener() {
+            @Override
+            public void onCV(AppliedJobDetails details) {
+
+                downloadCV(details);
+
+            }
+        });
+
     }
 
     private void readData(){
@@ -123,6 +135,47 @@ public class company_dashboard extends AppCompatActivity implements DateDialog.D
             }
         });
 
+
+    }
+
+
+    private void downloadCV(AppliedJobDetails details){
+
+        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("Files");
+
+        parseQuery.whereEqualTo("username",details.getUsername());
+
+        parseQuery.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                for(ParseObject object : objects){
+
+                    ParseFile parseFile = object.getParseFile("CV");
+
+                    try {
+
+                        String url = null;
+                        if (parseFile != null) {
+                            url = parseFile.getUrl();
+                        }
+
+                        if (url != null && !url.startsWith("http://") && !url.startsWith("https://"))
+                            url = "https://" + url;
+
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                        startActivity(browserIntent);
+
+                    }catch (NullPointerException n){
+
+                        Toast.makeText(getApplicationContext(),"No CV",Toast.LENGTH_LONG).show();
+
+                    }
+
+                }
+
+            }
+        });
 
     }
 

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import cse.job.asif.job4cse.HelperClass.AppliedJobDetails;
 import cse.job.asif.job4cse.R;
+import cse.job.asif.job4cse.interfaces.OnCvListener;
 import cse.job.asif.job4cse.interfaces.OnJobAcceptListener;
 import cse.job.asif.job4cse.interfaces.OnJobRejectListener;
 
@@ -22,6 +23,7 @@ public class JobAppliedAdapter extends RecyclerView.Adapter<JobAppliedAdapter.my
 
     private OnJobAcceptListener onJobAcceptListener;
     private OnJobRejectListener onJobRejectListener;
+    private OnCvListener onCvListener;
 
     public JobAppliedAdapter(ArrayList<AppliedJobDetails> JobList){
         this.JobList = JobList;
@@ -59,6 +61,13 @@ public class JobAppliedAdapter extends RecyclerView.Adapter<JobAppliedAdapter.my
             }
         });
 
+        myViewHolder.btnCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onCvListener.onCV(jobDetails);
+            }
+        });
+
     }
 
     @Override
@@ -76,6 +85,12 @@ public class JobAppliedAdapter extends RecyclerView.Adapter<JobAppliedAdapter.my
 
 
         this.onJobRejectListener = onJobRejectListener;
+
+    }
+
+    public void setOnCvListener(OnCvListener onCvListener){
+
+        this.onCvListener = onCvListener;
 
     }
 
