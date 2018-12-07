@@ -30,18 +30,26 @@ public class user_profile extends AppCompatActivity {
 
     private ImageView imageView;
     private TextView uploadCV;
+    private TextView textName;
+    private TextView textUser;
+    private TextView textEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         init();
+        readData();
+
     }
 
     private void init(){
 
         imageView = findViewById(R.id.logout);
         uploadCV = findViewById(R.id.uploadCV);
+        textName = findViewById(R.id.textName);
+        textUser = findViewById(R.id.textUserName);
+        textEmail = findViewById(R.id.textUserEmail);
 
         uploadCV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,6 +153,24 @@ public class user_profile extends AppCompatActivity {
 
     }
 
+    private void readData(){
 
 
+        ParseUser parseUser = ParseUser.getCurrentUser();
+
+        textName.setText("Name : " + parseUser.getString("name"));
+        textEmail.setText("Email : " + parseUser.getEmail());
+        textUser.setText("Username : " + parseUser.getUsername());
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        checkLogn.isLogged = 1;
+        setResult(RESULT_OK,new Intent());
+        finish();
+
+    }
 }

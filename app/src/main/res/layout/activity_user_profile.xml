@@ -37,4 +37,48 @@
         app:layout_constraintTop_toBottomOf="@+id/logout"
         app:layout_constraintVertical_bias="0.795" />
 
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="280dp"
+        android:layout_height="26dp"
+        android:minWidth="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:gravity="left"
+        android:text="Name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textUserName"
+        android:layout_width="279dp"
+        android:layout_height="26dp"
+        android:minWidth="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="left"
+        android:text="Username"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+    <TextView
+        android:id="@+id/textUserEmail"
+        android:layout_width="354dp"
+        android:layout_height="26dp"
+        android:minWidth="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="left"
+        android:text="Email"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textUserName" />
+
+
+
 </android.support.constraint.ConstraintLayout>

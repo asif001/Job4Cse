@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.parse.ParseUser;
+
 import cse.job.asif.job4cse.HelperClass.checkLogn;
 
 import cse.job.asif.job4cse.R;
@@ -18,12 +21,16 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
     //private TextView btnNotification;
     private TextView btnProfile;
     private TextView btnAppliedJobs;
+    private TextView textHello;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
         init();
+
+        textHello.setText("Hello, " + ParseUser.getCurrentUser().getUsername());
+
     }
 
     private void init(){
@@ -35,6 +42,7 @@ public class UserDashboard extends AppCompatActivity implements View.OnClickList
         //btnNotification = findViewById(R.id.notification);
         btnProfile = findViewById(R.id.userProfile);
         btnAppliedJobs = findViewById(R.id.savedApplied);
+        textHello = findViewById(R.id.textHello);
 
         btnSearchJob.setOnClickListener(new View.OnClickListener() {
             @Override
