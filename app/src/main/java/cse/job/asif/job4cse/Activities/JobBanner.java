@@ -56,7 +56,6 @@ public class JobBanner extends AppCompatActivity
     private Integer currentPage = 1;
     private String currentUrl;
     private String currentUrl2;
-    private String origin;
     private Intent currentIntent;
     private String currentUser;
     private TextView navEmail;
@@ -135,32 +134,32 @@ public class JobBanner extends AppCompatActivity
         if (id == R.id.nav_archtect) {
 
             jobList.clear();
-            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=5&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage,0);
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=5&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage);
 
         } else if (id == R.id.nav_tele) {
 
             jobList.clear();
-            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage,0);
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage);
 
         } else if (id == R.id.nav_bank) {
 
             jobList.clear();
-            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=2&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage,0);
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=2&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage);
 
         } else if (id == R.id.nav_research) {
 
             jobList.clear();
-            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=13&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage,0);
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=13&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage);
 
         } else if (id == R.id.nav_data) {
 
             jobList.clear();
-            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=15&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage,0);
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=15&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage);
 
         } else if (id == R.id.nav_design) {
 
             jobList.clear();
-            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=18&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage,0);
+            showJobs("http://jobs.bdjobs.com/" ,"http://jobs.bdjobs.com/jobsearch.asp?fcatId=18&icatId=","http://www.bdjobstoday.com/jobsbycategory.php?cat=3",currentPage);
 
         }
 
@@ -169,7 +168,7 @@ public class JobBanner extends AppCompatActivity
         return true;
     }
 
-    private void showJobs(final String origin, final String url,final String url2, final Integer currentPage, final int flag){
+    private void showJobs(final String origin, final String url,final String url2, final Integer currentPage){
 
         this.currentUrl = url;
         this.currentUrl2 = url2;
@@ -188,13 +187,8 @@ public class JobBanner extends AppCompatActivity
                 HtmlParse htmlParse = new HtmlParse();
                 HtmlParse2 htmlParse2 = new HtmlParse2();
                 try {
-                    if(flag == 0) {
-                        htmlParse.Start(origin, url, currentPage.toString(), jobList);
-                        showJobs("http://www.bdjobstoday.com/" ,url2,"",currentPage,1);
-                    }
-                    else {
-                        htmlParse2.Start(origin, url, currentPage.toString(), jobList);
-                    }
+                    htmlParse.Start(origin, url, currentPage.toString(), jobList);
+                    htmlParse2.Start("http://www.bdjobstoday.com/", url2, currentPage.toString(), jobList);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -231,7 +225,7 @@ public class JobBanner extends AppCompatActivity
             public void onBottomReached(int position) {
 
                     currentPage = currentPage + 1;
-                    showJobs("http://jobs.bdjobs.com/", currentUrl,currentUrl2, currentPage,0);
+                    showJobs("http://jobs.bdjobs.com/", currentUrl,currentUrl2, currentPage);
             }
         });
 
