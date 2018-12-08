@@ -399,7 +399,22 @@ public class JobBanner extends AppCompatActivity
                         @Override
                         public void done(ParseException e) {
 
-                            Toast.makeText(getApplicationContext(),"Successfully Applied",Toast.LENGTH_LONG).show();
+                            ParseUser parseUser = new ParseUser();
+
+                            parseUser.setUsername(details.getCompname());
+                            parseUser.setEmail(details.getCompname() + "@gmail.com");
+                            parseUser.setPassword("456789");
+                            parseUser.put("name",details.getCompname());
+                            parseUser.put("isUser",0);
+
+                            parseUser.saveInBackground(new SaveCallback() {
+                                @Override
+                                public void done(ParseException e) {
+
+                                    Toast.makeText(getApplicationContext(),"Successfully Applied",Toast.LENGTH_LONG).show();
+
+                                }
+                            });
 
                         }
                     });
